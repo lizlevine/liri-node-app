@@ -5,9 +5,6 @@ var request = require("request");
 var moment = require("moment");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
-//var defaultMovie = "The Hangover";
-var action = process.argv[2];
-var value = process.argv[3];
 
 function pick(command, query) {
   // create switch statements to hold different arguments from user
@@ -62,30 +59,15 @@ function getSongs(songName) {
       }
       var songs = data.tracks.items;
       for (var i = 0; i < songs.length; i++) {
-      console.log(i);
-      console.log("Artist(s): ",songs[i].album.artists[0].name);
-      console.log("Preview Song: ",songs[i].preview_url);
-      console.log("Album: ",songs[i].album.name);
+        console.log(i);
+        console.log("Artist(s): ", songs[i].album.artists[0].name);
+        console.log("Preview Song: ", songs[i].preview_url);
+        console.log("Album: ", songs[i].album.name);
       }
     }
   );
 }
-// copied and pasted below from NPM API-documentation - LL
-// var spotify = new Spotify({
-//   id: <your spotify client id>,
-//   secret: <your spotify client secret>
-// });
 
-// spotify.search({ type: "track", query: "All the Small Things" }, function(
-//   err,
-//   data
-// ) {
-//   if (err) {
-//     return console.log("Error occurred: " + err);
-//   }
-
-//   console.log(data);
-// });
 function getMovies(movieName) {
   axios
     .get("http://www.omdbapi.com/?apikey=trilogy&t=" + movieName)
@@ -107,7 +89,7 @@ function doWhatItSays() {
     data = data.split(",");
     var action = data[0];
     var value = data[1];
-    // getSongs(value)
+
     switch (action) {
       case "concert-this":
         getBands(value);
