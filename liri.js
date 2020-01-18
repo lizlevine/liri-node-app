@@ -5,9 +5,10 @@ var request = require("request");
 var moment = require("moment");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
+var divider =
+  "\n------------------------------------------------------------\n\n";
 
 function pick(command, query) {
-  // create switch statements to hold different arguments from user
   switch (command) {
     case "concert-this":
       getBands(query);
@@ -22,6 +23,7 @@ function pick(command, query) {
       doWhatItSays();
       break;
     default:
+      console.log("Hmmm, I'm not familiar with that. Please try again!");
       break;
   }
 }
@@ -37,6 +39,7 @@ function getBands(artist) {
       console.log("Venue location:", response.data[0].venue.city);
       var eventDate = moment(response.data[0].datetime).format("MM/DD/YYYY");
       console.log("Date of the Event:", eventDate);
+      console.log(divider);
     })
     .catch(function(error) {
       console.log(error);
@@ -63,6 +66,7 @@ function getSongs(songName) {
         console.log("Artist(s): ", songs[i].album.artists[0].name);
         console.log("Preview Song: ", songs[i].preview_url);
         console.log("Album: ", songs[i].album.name);
+        console.log(divider);
       }
     }
   );
@@ -82,6 +86,7 @@ function getMovies(movieName) {
         Plot of the movie: ${data.data.Plot}
         Actors in the movie: ${data.data.Actors}`;
       console.log(results);
+      console.log(divider);
     });
 }
 function doWhatItSays() {
