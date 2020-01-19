@@ -5,8 +5,7 @@ var request = require("request");
 var moment = require("moment");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
-var divider =
-  "\n------------------------------------------------------------\n\n";
+var divider = "\n-----------------------------------------------------------------------\n";
 
 function pick(command, query) {
   switch (command) {
@@ -63,9 +62,10 @@ function getSongs(songName) {
       var songs = data.tracks.items;
       for (var i = 0; i < songs.length; i++) {
         console.log(i);
-        console.log("Artist(s): ", songs[i].album.artists[0].name);
-        console.log("Preview Song: ", songs[i].preview_url);
-        console.log("Album: ", songs[i].album.name);
+        console.log("Artist(s): " + songs[i].album.artists[0].name);
+        console.log("Song name: " + songs[i].name);
+        console.log("Preview song: " + songs[i].preview_url);
+        console.log("Album: " + songs[i].album.name);
         console.log(divider);
       }
     }

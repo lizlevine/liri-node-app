@@ -1,5 +1,5 @@
-# The following were specified in hw instructions, the others 
-# were built into the repo setup w/node specified
+# The following 3 items were specified in hw instructions (the others  were built into the repo setup w/node specified)
+
 node_modules
 .DS_Store
 .env
