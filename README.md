@@ -30,17 +30,17 @@ LIRI is a Language Interpretation and Recognition Interface — a command line 
 
 ## The following screenshots demonstrate the search results for each command
 
-#### node liri.js spotify-this-song Sympathy for the Devil
+#### node liri.js spotify-this-song Killer Queen, Sympathy for the Devil
 
 ![](images/spotify-this-song.gif)
 ![](images/spotify-this-song.png)
 
-#### node liri.js movie-this Mean Girls
+#### node liri.js movie-this Babel, Mean Girls
 
 ![](images/movie-this.gif)
 ![](images/movie-this.png)
 
-#### node liri.js concert-this Lady Gaga
+#### node liri.js concert-this Lady Gaga, Gypsy Kings
 
 ![](images/concert-this.gif)
 ![](images/concert-this.png)

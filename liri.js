@@ -5,7 +5,8 @@ var request = require("request");
 var moment = require("moment");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
-var divider = "\n-----------------------------------------------------------------------\n";
+var divider =
+  "\n-----------------------------------------------------------------------\n";
 
 function pick(command, query) {
   switch (command) {
@@ -114,7 +115,7 @@ function doWhatItSays() {
     PublicKeyCredential(argOne, argTwo);
   };
 }
-//Function which takes in command line arguments and executes correct function accordingly
+
 var runThis = function(argOne, argTwo) {
   pick(argOne, argTwo);
 };
