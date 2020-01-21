@@ -1,7 +1,6 @@
 require("dotenv").config();
 var keys = require("./keys.js");
 var fs = require("fs");
-var request = require("request");
 var moment = require("moment");
 var axios = require("axios");
 var Spotify = require("node-spotify-api");
@@ -9,6 +8,7 @@ var divider =
   "\n-----------------------------------------------------------------------\n";
 
 function pick(command, query) {
+  // var pick = function(command, query) {
   switch (command) {
     case "concert-this":
       getBands(query);
@@ -27,6 +27,7 @@ function pick(command, query) {
       break;
   }
 }
+
 function getBands(artist) {
   axios
     .get(
@@ -49,7 +50,7 @@ function getBands(artist) {
 var spotify = new Spotify(keys.spotify);
 function getSongs(songName) {
   if (songName === "") {
-    songName = "Payphone";
+    songName = "Hotel California";
   }
   spotify.search(
     {
@@ -68,7 +69,7 @@ function getSongs(songName) {
         console.log("Song name: " + songs[i].name);
         console.log("Preview song: " + songs[i].preview_url);
         console.log("Album: " + songs[i].album.name);
-        console.log("GREAT SONG! Search for another!")
+        console.log("GREAT SONG! Search for another!");
         console.log(divider);
       }
     }
@@ -93,6 +94,7 @@ function getMovies(movieName) {
       console.log(divider);
     });
 }
+
 function doWhatItSays() {
   fs.readFile("random.txt", "utf8", function(err, data) {
     data = data.split(",");
@@ -113,10 +115,6 @@ function doWhatItSays() {
         break;
     }
   });
-
-  var runThis = function(argOne, argTwo) {
-    PublicKeyCredential(argOne, argTwo);
-  };
 }
 
 var runThis = function(argOne, argTwo) {
