@@ -39,6 +39,7 @@ function getBands(artist) {
       console.log("Venue location:", response.data[0].venue.city);
       var eventDate = moment(response.data[0].datetime).format("MM/DD/YYYY");
       console.log("Date of the Event:", eventDate);
+      console.log("Love it! Get me a ticket!");
       console.log(divider);
     })
     .catch(function(error) {
@@ -67,6 +68,7 @@ function getSongs(songName) {
         console.log("Song name: " + songs[i].name);
         console.log("Preview song: " + songs[i].preview_url);
         console.log("Album: " + songs[i].album.name);
+        console.log("GREAT SONG! Search for another!")
         console.log(divider);
       }
     }
@@ -87,6 +89,7 @@ function getMovies(movieName) {
         Plot of the movie: ${data.data.Plot}
         Actors in the movie: ${data.data.Actors}`;
       console.log(results);
+      console.log("One of my favorite films!");
       console.log(divider);
     });
 }
