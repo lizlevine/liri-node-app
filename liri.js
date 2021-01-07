@@ -88,7 +88,7 @@ function getMovies(movieName) {
         Country where the movie was produced: ${data.data.Country}
         Language of the movie: ${data.data.Language}
         Plot of the movie: ${data.data.Plot}
-        Actors in the movie: ${data.data.Actors}`;
+        Actors in the movie: ${data.data.Actors}`;   
       console.log(results);
       console.log("One of my favorite films!");
       console.log(divider);
